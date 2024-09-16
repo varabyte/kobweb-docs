@@ -1,0 +1,14 @@
+site:
+  title: "Kobweb Guide"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/guide.js"
+      api: "build/libs/guide.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/guide.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
