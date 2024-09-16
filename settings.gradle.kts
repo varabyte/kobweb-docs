@@ -8,5 +8,7 @@ pluginManagement {
 
 rootProject.name = "guide"
 
+includeBuild("kobweb")
+
 include(":site")
 

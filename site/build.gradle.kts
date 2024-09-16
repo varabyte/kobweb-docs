@@ -3,8 +3,8 @@ import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.kobweb.application)
-    alias(libs.plugins.kobwebx.markdown)
+    id("com.varabyte.kobweb.application")
+    id("com.varabyte.kobwebx.markdown")
 }
 
 group = "com.varabyte.kobweb.guide"
@@ -16,6 +16,7 @@ kobweb {
             description.set("Powered by Kobweb")
         }
     }
+    kspProcessorDependency.set("com.varabyte.kobweb:site-processors")
 }
 
 kotlin {
@@ -28,10 +29,10 @@ kotlin {
 
         jsMain.dependencies {
             implementation(libs.compose.html.core)
-            implementation(libs.kobweb.core)
-            implementation(libs.kobweb.silk)
-            implementation(libs.silk.icons.fa)
-            implementation(libs.kobwebx.markdown)
+            implementation("com.varabyte.kobweb:kobweb-core")
+            implementation("com.varabyte.kobweb:kobweb-silk")
+            implementation("com.varabyte.kobwebx:silk-icons-fa")
+            implementation("com.varabyte.kobwebx:kobwebx-markdown")
             
         }
     }
